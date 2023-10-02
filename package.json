@@ -20,7 +20,8 @@
 		"dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
 		"typecheck": "tsc --noEmit",
 		"build": "tsc  && chmod +x dist/downloadModel.js",
-		"format": "prettier --write src/**/*.ts"
+		"format": "prettier --write src/**/*.ts",
+		"postinstall": "tsc"
 	},
 	"keywords": [
 		"OpenAI",
