@@ -24,7 +24,6 @@ export async function whisperShell(command: string, options: IShellOptions = def
 					if (stdout.match(/^error:/gm)) {
 						throw new Error('whisper.cpp error:\n' + stdout)
 					}
-					console.log('[Nodejs-whisper] Transcribing Done!')
 
 					resolve(stdout)
 				} else {
