@@ -51,7 +51,7 @@ export const executeCppCommand = async (command: string) => {
 					" [Nodejs-whisper] 'make' command failed. Please run 'make' command in /whisper.cpp directory. Current shelljs directory: ",
 					__dirname
 				)
-				process.exit(1)
+				throw new Error("Make command failed.");
 			} else {
 				console.log("[Nodejs-whisper] 'make' command successful. Current directory: ", __dirname)
 				return await whisperShell(command, defaultShellOptions)

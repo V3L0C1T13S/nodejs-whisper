@@ -13,7 +13,7 @@ export const constructCommand = (filePath: string, args: IOptions) => {
 	if (isValidModelName == -1) {
 		console.log('[Nodejs-whisper] Error: Enter a valid model name')
 		console.log('[Nodejs-whisper] Available models are:\n', MODELS_LIST)
-		process.exit(1)
+		throw new Error("Bad model.");
 	}
 
 	let anyModelExist = []
