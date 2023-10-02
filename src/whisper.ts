@@ -60,7 +60,6 @@ export const executeCppCommand = async (command: string) => {
 			return await whisperShell(command, defaultShellOptions)
 		}
 	} catch (error) {
-		console.log('[Nodejs-whisper] Error in whisper.ts catch block.')
-		throw error
+		throw new Error(error);
 	}
 }

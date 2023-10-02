@@ -19,7 +19,6 @@ export async function nodewhisper(filePath: string, options: IOptions) {
 	}
 
 	checkIfFileExists(filePath)
-	console.log(`[Nodejs-whisper]  Transcribing file: ${filePath}\n`)
 	// await downloadModel()
 
 	const outputFilePath = await convertToWavType(filePath)
@@ -27,8 +26,6 @@ export async function nodewhisper(filePath: string, options: IOptions) {
 	checkIfFileExists(outputFilePath)
 
 	const command = constructCommand(outputFilePath, options!)
-
-	console.log(`[Nodejs-whisper]  Executing command: ${command}\n`)
 
 	const transcript = await executeCppCommand(command)
 
